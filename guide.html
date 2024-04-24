@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'> -->
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="imges/logo_some.png">
+    <title>SOMEPOONING_Dashboard</title>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="#" class="logo">
+            <img src="imges/logo_some.png" alt="로고 42*47">
+            <div class="logo-name">
+                SOME<span>POONING</span>
+            </div>
+        </a>
+        
+        <ul class="side-menu">
+            <li><a href="index.html"><i class='bx bxs-dashboard'></i>대쉬보드</a></li>
+            <li><a href="sp_users.html"><i class='bx bx-group'></i>유저관리</a></li>
+            <li><a href="chatting.html"><i class='bx bx-message-square-dots'></i>채팅관리</a></li>
+            <li><a href="party.html"><i class='bx bx-party'></i>파티관리</a></li>
+            <li><a href="shorts_gram.html"><i class='bx bx-video-recording'></i>쇼츠&그램</a></li>
+            <li><a href="sales.html"><i class='bx bx-coin-stack'></i>매출관리</a></li>
+            <li><a href="push.html"><i class='bx bx-down-arrow-circle'></i>푸쉬관리</a></li>
+            <li><a href="announcement.html"><i class='bx bx-edit-alt'></i>공지관리</a></li>
+            <li><a href="report.html"><i class='bx bx-no-entry'></i>신고관리</a></li>
+            <li class="active"><a href="guide.html"><i class='bx bx-book-open'></i>썸푸닝가이드</a></li>
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="#" class="logout">
+                    <i class='bx bx-log-out-circle'></i>
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- End of Sidebar -->
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Navbar -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <form action="#">
+                <div class="form-input">
+                    <input type="search" placeholder="검색어를 입력해주세요">
+                    <button class="search-btn" type="submit"><i class='bx bx-search'></i></button>
+                </div>
+            </form>
+            <input type="checkbox" id="theme-toggle" hidden>
+            <label for="theme-toggle" class="theme-toggle"></label>
+            <a href="#" class="notif">
+                <i class='bx bx-bell'></i>
+                <span class="count">12</span>
+            </a>
+            <a href="#" class="profile">
+                <img src="./imges/logo_some_50_56.png">
+            </a>
+        </nav>
+
+        <!-- End of Navbar -->
+
+        <main>
+            <!-- <div class="header">
+                <div class="left">
+                    <h1>유저관리</h1>
+                </div>
+            </div> -->
+
+            <div class="guide-management">
+                <div class="guide-list">
+                    
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <span>Copyright</span>
+                    <span>&copy;</span>
+                    <span><a href="#">NexParan</a> </span>
+                    <span>2024 SOMEPOONING</span>
+                </div>
+                <div class="version">v1.4.2</div>
+            </div>
+        </main>
+
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+</body>
+
+</html>
