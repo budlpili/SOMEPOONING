@@ -59,6 +59,11 @@ toggler.addEventListener('change', function () {
 
 
 
+
+
+
+
+
 // text editor
 
 let optionsButtons = document.querySelectorAll(".option-button");
@@ -183,6 +188,10 @@ window.onload = initializer();
 
 
 
+
+
+
+
 // dropdown menu - announcement.html, party.html 
 
 window.onload = () => {
@@ -192,6 +201,7 @@ window.onload = () => {
     document.getElementsByClassName('dataclass').onclick = () => {
         showMenu(value);
     };
+    console.log('드랍다운전')
     dropdown = () => {
         var v = document.querySelector('.dropdown-content');
         var dropbtn = document.querySelector('.dropbtn')
