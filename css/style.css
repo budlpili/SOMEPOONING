@@ -1382,7 +1382,11 @@ td{
     padding: 24px;
     overflow-x: auto;
 }
-
+.content main .party-management .party-list{
+    flex-grow: 1;
+    flex-basis: 700px;
+    box-shadow: 2px 2px 4px rgb(0,0,0,0.1);
+}
 .content main .party-management .party-list .header{
     display: flex;
     align-items: center;
@@ -1439,14 +1443,40 @@ td{
 /* search form style end */
 
 
+/* party drop down style start */
+.party-room .party-list-icon{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+.dropdown-wrap.party{
+    padding: 0px;
+}
+.dropdown-wrap.party .dropdown{
+    display: flex;
+    align-items: center;
+}
+.dropdown-wrap.party .dropdown .text{
+    margin-right: 8px;
+    font-size: .85rem;
+    font-weight: 600;
+}
+.dropdown-wrap.party button{
+    width: 200px;
+    background-color: var(--grey);
+    font-size: 0.85rem;
+}
+.dropdown-wrap.party .dropbtn .dropbtn-content{
+    font-size: 0.85rem;
+}
+
+
+/* party drop down style end */
+
+
 
 /* party table style start */
-
-.content main .party-management .party-list{
-    flex-grow: 1;
-    flex-basis: 500px;
-    box-shadow: 2px 2px 4px rgb(0,0,0,0.1);
-}
 
 .content main .party-management .party-list table{
     width: 100%;
@@ -1454,7 +1484,7 @@ td{
 }
 .content main .party-management .party-list table th{
     position: relative;
-    padding: 10px 0px;
+    padding: 10px 16px;
     color:var(--dark);
     text-align: center;
     border-top: 1px solid var(--grey);
@@ -1462,17 +1492,34 @@ td{
 }
 
 .content main .party-management .party-list table td{
-    padding: 16px 0;
+    padding: 16px 10px;
     text-align: center;
 }
-.content main .party-management .party-list table td.user-1{
-    min-width:120px;
+.content main .party-management .party-list table td.p-num{
+    color:var(--dark-grey);
+    min-width: 60px;
 }
-.content main .party-management .party-list table td.user-2{
-    min-width:120px;
+.content main .party-management .party-list table td.p-master{
+    min-width: 100px;
 }
-.content main .party-management .party-list table td.memo{
+.content main .party-management .party-list table td.p-users{
+    min-width: 88px;
+}
+.content main .party-management .party-list table td.p-title{
     text-align: left;
+    min-width: 160px;
+    width: 70%;
+}
+.content main .party-management .party-list table td.p-starttime{
+    min-width: 60px;
+    width: 10%;
+}
+.content main .party-management .party-list table td.p-room-bb{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    min-width:100px;
 }
 
 .content main .party-management .party-list table td img{
@@ -1522,6 +1569,148 @@ td{
     background: var(--success);
 
 }
+
+/* party room style start */
+
+.party-room-wrap{
+    flex-grow: 1;
+    flex-basis: 400px;
+    box-shadow: 2px 2px 4px rgb(0,0,0,0.1);
+}
+
+.party-room .chat-top {
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    border: 2px dotted var(--dark-grey);
+}
+
+.party-room .hr{
+    background-color: var(--grey);
+    height: 1px;
+}
+.party-room .hr-2{
+    background-color: var(--grey);
+    height: 2px;
+}
+
+.party-room .chat-top .profile-wrap{
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.party-room .chat-top .profile-wrap span.chat-num{
+    color:var(--dark-grey);
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-right: 8px;
+}
+.party-room .chat-top .profile-wrap .chat-profile{
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.party-room .chat-top .profile-wrap .profile-image {
+    width: 48px;
+    height: 48px;
+    border-radius: 40px;
+}
+.profile-image {
+    width: 36px;
+    height: 36px;
+    border-radius: 40px;
+}
+.party-room .chat-top .profile-wrap .text{
+    margin-left: 8px;
+    color: var(--dark);
+}
+.party-room .chat-top .profile-wrap .chat-num{
+    margin-left: 8px;
+    color: var(--dark);
+}
+.party-room .chat-top .profile-wrap p{
+    font-size: 0.75rem;
+    width: 100%;
+    margin-top: 8px;
+}
+.party-room .icon-right {
+    margin-left: 16px;
+    margin-top: 4px;
+}
+
+.party-room .icon-right i {
+    font-size: 1.25rem;
+    color: var(--primary);
+    padding: 6px;
+    border-radius: 16px;
+    transition: 0.3s;
+}
+
+.party-room .icon-right i:hover {
+    color: var(--light);
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 24px;
+    background-color: var(--primary);
+}
+
+.party-room .chat-panel{
+    font-size: 0.85rem;
+    width: 100%;
+    height: 580px;
+    overflow-y: scroll;
+}
+.party-room .chat-panel::-webkit-scrollbar{
+    display: none;
+}
+
+.party-room .chat-panel .users{
+    display: flex;
+    align-items: center;
+}
+
+.party-room input {
+    width:500px;
+    border-style: none;
+    padding:10px;
+    font-size: .85rem;
+    outline: none;
+    color: var(--dark); 
+    border-radius: 10px;
+    border: 1px solid rgb(83, 44, 144, 0);
+    background-color: var(--grey);
+}
+
+.party-room input::placeholder {
+    color: var(--dark-grey);
+    font-size: 0.85rem;
+    font-weight: 400;
+    /* margin-left: 20px; */
+    padding: 10px;
+}
+
+.party-room input:focus {
+    background-color: #fff;
+    box-shadow: 0px 0px 4px rgb(83, 44, 144, 0.6);
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+}
+
+
+.chat-box-tray i {
+    font-size: 1.5rem;
+    color: grey;
+    vertical-align: middle;
+    margin: 0px 8px;
+}
+.chat-box-tray :nth-child(3) {
+    color: var(--primary);
+}
+.chat-box-tray i:last-of-type {
+    color: var(--success);
+}
+
+/* chatting roon style end */
 
 
 
@@ -2270,14 +2459,15 @@ td{
     margin-top:36px;
     border-top: 1px solid var(--dark-grey);
 }
-/* drop down style start */
+
+
+/* 공지 drop down style start */
+
 .dropdown-wrap{
     display: flex;
     align-items: center;
     padding: 36px 30px 16px 30px;
     gap:24px;
-
-
 }
 .dropdown {
     position: relative;
@@ -2288,7 +2478,7 @@ td{
 }
 .dropbtn {
     display: block;
-    border: none;
+    border: 1px solid rgb(0, 0, 0, .0);
     border-radius: 3px;
     background-color: var(--light);
     padding: 12px;
@@ -2339,7 +2529,7 @@ td{
 .dropdown-content div {
     display: block;
     text-decoration: none;
-    color: rgb(37, 37, 37);
+    color: var(--dark);
     font-size: .85rem;
     font-weight: 500;
     padding: 12px 20px;
@@ -2490,7 +2680,103 @@ input[type="color"]::-moz-color-swatch {
 /* text editor style end */
 
 
+/*-----------------------------------*\
+    # user-profile
+\*-----------------------------------*/
 
+.content main .user-profile-management{
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 24px;
+    /* margin-top: 24px; */
+    width: 100%;
+    color: var(--dark);
+}
+
+.content main .user-profile-management>div{
+    border-radius: 20px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+}
+
+.content main .user-profile-management .profile-list .header{
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    margin-bottom: 24px;
+}
+
+.content main .user-profile-management .profile-list .header h3{
+    margin-right: auto;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* table style start */
+.content main .user-profile-management .profile-list{
+    flex-grow: 1;
+    flex-basis: 500px;
+    box-shadow: 2px 2px 4px rgb(0,0,0,0.1);
+}
+
+table.user-table{
+    display:flex;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    
+.user-table th{
+    display:block;
+    height: 36px;
+    position: relative;
+    padding: 10px 0px;
+    color:var(--dark);
+    text-align: left;
+    border-top: 1px solid var(--grey);
+    border-bottom: 1px solid var(--grey);
+}
+.user-table td{
+    display:block;
+    height: 36px;
+    position: relative;
+    padding: 10px 0px;
+    color:var(--dark);
+    text-align: left;
+    border-top: 1px solid var(--grey);
+    border-bottom: 1px solid var(--grey);
+}
+
+.profile-list table tbody tr{
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.profile-list table thead tr:hover,
+.profile-list table tbody tr:hover{
+    background: var(--grey);
+}
+
+.profile-list table tr td .status{
+    font-size: 10px;
+    padding: 6px 16px;
+    color: var(--light);
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+.profile-list table tr td .status.completed{
+    background: var(--success);
+}
+
+.profile-list table tr td .status.process{
+    background: var(--primary);
+}
+
+.profile-list table tr td .status.pending{
+    background: var(--warning);
+}
 
 
 

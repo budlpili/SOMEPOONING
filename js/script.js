@@ -183,7 +183,7 @@ window.onload = initializer();
 
 
 
-// dropdown menu - announcement.html 
+// dropdown menu - announcement.html, party.html 
 
 window.onload = () => {
     document.querySelector('.dropbtn_click').onclick = () => {

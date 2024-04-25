@@ -89,30 +89,33 @@
                         <thead>
                             <tr>
                                 <th><input type="checkbox" class="all-check"></th>
-                                <th class=""><a href="#">파티장</a></th>
-                                <th class=""><a href="#">참여인원수</a></th>
-                                <th class=""><a href="#">주제</a></th>
-                                <th class=""><a href="#">개설시간</a></th>
-                                <th class=""><a href="#">방관리</a></th>
+                                <th class="table-num"><a href="#">번호</a></th>
+                                <th class="party-master"><a href="#">파티장</a></th>
+                                <th class="party-users"><a href="#">참여인원</a></th>
+                                <th class="party-title"><a href="#">주제</a></th>
+                                <th class="party-starttime"><a href="#">개설시간</a></th>
+                                <th class="party-room-bb"><a href="#">방관리</a></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><input type="checkbox" class="one-check"></td>
-                                <td class="user-1">
+                                <td class="p-num">9852</td>
+                                <td class="p-master">
                                     <img src="./imges/avatar/Avatar=13.png">
                                     <p>우리두리 알콩달콩</p>
                                 </td>
-                                <td class="user-2">
-                                    <span class="count">10</span> 
-                                    <span class="text">명</span>
+                                <td class="p-users">
+                                    <span class="count">10명</span> 
                                 </td>
-                                <td class="memo">이번 크리스마스 연말에 함께해요</td>
+                                <td class="p-title">이번 크리스마스 연말에 함께해요</td>
                                 
-                                <td><span class="date">24/04/01</span> 
+                                <td class="p-starttime">
+                                    <span class="date">24/04/01</span> 
                                     <span class="time">16:44:62</span>
                                 </td>
-                                <td class="chatting-btn"><div class="status completed">경고</div>
+                                <td class="p-room-bb">
+                                    <div class="status completed">경고</div>
                                     <div class="status process">방삭제</div>
                                 </td>
                                 
@@ -148,11 +151,167 @@
                         </ul>
                     </div>
                 </div>
-                <div class="chat-room">
-                    <div>
-                        chattingroom
+
+
+                <!-- party-room --->
+
+                <div class="party-room-wrap">
+                    <div class="party-room">
+                        <div class="chat-top">
+                            <div class="profile-wrap">
+                                <div>
+                                    <span class="chat-num">9852</span>
+                                </div>
+                                <div class="chat-profile">
+                                    <img class="profile-image user-1" src="./imges/avatar/Avatar=9.png" alt="">
+                                    <div class="text">
+                                        <h5>우리알콩달콩</h5>
+                                        <p class="memo">인상이 참 좋으싶니다. 저는 서울에사는 공무원 입니다. 대화하고 싶어요</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="hr-2"></div>
+
+                            <div class="party-list-icon">
+                                <div class="dropdown-wrap party">
+                                    
+                                    <div class="dropdown party">
+                                        <div class="text">
+                                            참여자 : 10명
+                                        </div>
+                                        <button class="dropbtn party">
+                                            <span class="dropbtn_icon" style="display: none;">more_horiz</span>
+                                            <span class="dropbtn_content">--- 파티참여자리스트 ---</span>
+                                            <span class="dropbtn_click" onclick="dropdown()">arrow_drop_down</span>
+                                        </button>
+                                
+                                        <div class="dropdown-content party">
+                                            <div class="dataclass" onclick="showMenu(this.innerText)">user-1</div>
+                                            <div class="dataclass" onclick="showMenu(this.innerText)">user-1</div>
+                                            <div class="dataclass" onclick="showMenu(this.innerText)">user-1</div>
+                                            <div class="dataclass" onclick="showMenu(this.innerText)">user-1</div>
+                                
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="icon-right">
+                                    <i class="material-icons">cached</i>
+                                    <i class="material-icons">message</i>
+                                    <i class="material-icons">menu</i>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <div class="hr"></div>
+                        <div class="chat-panel">
+
+                            <div class="user-1-chat users">
+                                <img class="profile-image user-1" src="./imges/avatar/Avatar=9.png" alt="">
+                                <div class="chat-bubble">
+                                    안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요
+                                    안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요
+                                    안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요
+                                </div>
+                            </div>
+
+                            <div class="user-2-chat users">
+                                <div class="chat-bubble">
+                                    안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.
+                                </div>
+                                <img class="profile-image user-2" src="./imges/avatar/Avatar=8.png" alt="">
+                            </div>
+
+                            <div class="user-2-chat users">
+                                <div class="chat-bubble">
+                                    반갑습니다.반갑습니다.반갑습니다.반갑습니다.반갑습니다.반갑습니다.반갑습니다.
+                                </div>
+                                <img class="profile-image user-2" src="./imges/avatar/Avatar=6.png" alt="">
+                            </div>
+
+                            <div class="user-1-chat users">
+                                <img class="profile-image user-1" src="./imges/avatar/Avatar=9.png" alt="">
+                                <div class="chat-bubble">
+                                    2안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요
+                                    안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요
+                                    안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요
+                                </div>
+                            </div>
+                            
+                            <div class="manager-chat users">
+                                <div class="chat-bubble">
+                                    <i class='bx bxs-megaphone'></i>
+                                    <span>안내 : 관리자 메세지를 나타냅니다.</span>
+                                </div>
+                            </div>
+
+                            <div class="manager-chat chat-bubble">
+                                
+                            </div>
+
+                            <div class="user-1-chat users">
+                                <img class="profile-image user-1" src="./imges/avatar/Avatar=9.png" alt="">
+                                <div class="chat-bubble">
+                                    2안녕하세요
+                                </div>
+                            </div>
+                            <div class="user-1-chat users">
+                                <img class="profile-image user-1" src="./imges/avatar/Avatar=9.png" alt="">
+                                <div class="chat-bubble">
+                                    2안녕하세요
+                                </div>
+                            </div>
+                            <div class="user-2-chat users">
+                                <div class="chat-bubble">
+                                    반갑습니다.반갑습니다.반갑습니다.반갑습니다.반갑습니다.반갑습니다.반갑습니다.
+                                    반갑습니다.반갑습니다.반갑습니다.반갑습니다.반갑습니다.반갑습니다.반갑습니다.
+                                </div>
+                                <img class="profile-image user-2" src="./imges/avatar/Avatar=5.png" alt="">
+                            </div>
+                            <div class="user-2-chat users">
+                                <div class="chat-bubble">
+                                    반갑습니다.
+                                </div>
+                                <img class="profile-image user-2" src="./imges/avatar/Avatar=7.png" alt="">
+                            </div>
+
+                            <div class="user-2-chat users">
+                                <div class="chat-bubble">
+                                    반갑습니다.
+                                </div>
+                                <img class="profile-image user-2" src="./imges/avatar/Avatar=3.png" alt="">
+                            </div>
+                            
+                            <div class="user-2-chat users">
+                                <div class="chat-bubble">
+                                    반갑습니다.
+                                </div>
+                                <img class="profile-image user-2" src="./imges/avatar/Avatar=6.png" alt="">
+                            </div>
+                            <div class="user-2-chat users">
+                                <div class="chat-bubble">
+                                    반갑습니다.
+                                </div>
+                                <img class="profile-image user-2" src="./imges/avatar/Avatar=4.png" alt="">
+                            </div>
+                            
+                        </div>
+                        <div class="hr bottom"></div>
+                        <div class="chat-box-wrap">
+                            <div class="chat-box-tray">
+                                <i class="material-icons">sentiment_very_satisfied</i>
+                                <input type="text" placeholder="메세지를 입력해주세요">
+                                <i class="material-icons">mic</i>
+                                <i class="material-icons">send</i>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
+
+
             </div>
 
 
