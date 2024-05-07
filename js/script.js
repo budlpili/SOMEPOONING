@@ -248,6 +248,23 @@ window.onclick = (e) => {
 
 
 
+// drop down menu - 프로필사진
+const optionMenu_photo = document.querySelector("#select-photo"),
+    selectBtn_photo = optionMenu_photo.querySelector("#select-btn-photo"),
+    options_photo = optionMenu_photo.querySelectorAll("#option-photo"),
+    sBtn_text_photo = optionMenu_photo.querySelector("#sBtn-text-photo");
+
+selectBtn_photo.addEventListener("click", () => optionMenu_photo.classList.toggle("active"));
+
+options_photo.forEach(option_photo => {
+    option_photo.addEventListener("click", () => {
+        let selectedOption_photo = option_photo.querySelector("#option-text-photo").innerText;
+        sBtn_text_photo.innerText = selectedOption_photo;
+
+        optionMenu_photo.classList.remove("active");
+    });
+});
+
 
 // drop down menu1 - 국적
 const optionMenu = document.querySelector("#select-01"),
@@ -439,6 +456,7 @@ img.onclick = function () {
     modalImg.src = this.src;
     captionText.innerHTML = this.alt;
 }
+
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
