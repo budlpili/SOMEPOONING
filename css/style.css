@@ -3239,95 +3239,6 @@ input[type="color"]::-moz-color-swatch {
 
 }
 
-
-
-/* dropdown user-profile  */
-/* 
-.dropdown-wrap.user-profile{
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    padding: 0px;
-}
-.dropdown-wrap.user-profile .dropdown{
-    width: 100%;
-}
-.dropdown-wrap.user-profile .dropbtn {
-    display: block;
-    outline: none;
-    border-style: none;
-    border: 1px solid rgb(0, 0, 0, .1);
-    border-radius: 3px;
-    background-color: #fbfbfb;
-    padding: 12px;
-    width: 100%;
-    color: var(--dark);
-    text-align: left;
-    cursor: pointer;
-    font-size: .75rem;
-    font-weight: 500;
-    position: relative;
-}
-.dropdown-wrap.user-profile .dropbtn span{
-    color: var(--dark); 
-}
-
-.dropdown-wrap.user-profile .dropbtn:focus {
-    background-color: #fff;
-    box-shadow: 0px 0px 4px rgb(83, 44, 144, 0.6);
-    border: 1px solid var(--primary);
-    border-radius: 3px;
-}
-.dropdown-wrap.user-profile .dropdown-content {
-    position: absolute;
-    display: none;
-    font-weight: 500;
-    background-color: var(--light);
-    min-width: 160px;
-    border-radius: 8px;
-    height: 160px;
-    overflow: scroll;
-    z-index: 100000;
-    box-shadow: 0px 0px 10px 3px rgba(190, 190, 190, 0.6);
-}
-.dropdown-wrap.user-profile .dropbtn_icon{
-    font-family: Material Icons; 
-    float: left;
-}
-.dropdown-wrap.user-profile .dropbtn_click{
-    font-family: Material Icons; 
-    font-size : 16px; 
-    color : #3b3b3b; 
-    float: right;
-}
-.dropdown-wrap.user-profile .dropdown-content::-webkit-scrollbar {
-    width: 5px;
-    height: 10px;
-}
-
-.dropdown-wrap.user-profile .dropdown-content::-webkit-scrollbar-thumb {
-    border-radius: 2px;
-    background-color: rgb(194, 194, 194)
-}
-
-.dropdown-wrap.user-profile .dropdown-content div {
-    display: block;
-    text-decoration: none;
-    color: var(--dark);
-    font-size: .85rem;
-    font-weight: 500;
-    padding: 12px 20px;
-}
-
-.dropdown-wrap.user-profile .dropdown-content div:hover {
-    background-color: rgb(226, 226, 226);
-}
-
-.dropdown-wrap.user-profile .dropdown-content.show {
-    display: block;
-} */
-
-
 .user-id-item .profile-btn button{
     border: none;
     outline: none;
@@ -3359,7 +3270,8 @@ input[type="color"]::-moz-color-swatch {
 }
 
 
-/* pop up style start */
+/* modal style start */
+
 .attached-file-wrap{
     width: 100%;
     margin: 24px 0px;
@@ -3376,118 +3288,101 @@ input[type="color"]::-moz-color-swatch {
     flex-wrap: wrap;
     width:100%;
 }
-.att-file .att-item{
+.att-file .images{
+    display: flex;
+    flex-direction: column;
     width: calc(100%/6);
     border-radius: 3px;
     padding: 0px 4px;
     background-color: var(--grey);
 }
-.att-file .att-item .att-title{
+.att-file .images .att-title{
     text-align: center;
     font-size: .85rem;
-    font-weight: 600;
-    color: var(--dark-grey);
+    font-weight: 400;
+    color: var(--dark);
     padding: 8px;
 }
-.att-file .att-item img{
+.att-file .images img{
     width: 100%;
 }
+.images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 8px;
+}
 
-
-#myImg {
-    border-radius: 5px;
+.images img {
+    width: 100%;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.3s all ease;
 }
 
-#myImg:hover {
-    opacity: 0.7;
+.images img:hover {
+    transform: scale(0.9);
 }
 
-/* The Modal (background) */
 .modal {
-    display: none;
     position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
     z-index: 10000;
-    padding-top: 100px;
-    left:15%;
-    top: 5%;
-    margin: 45px;
-    width: 60%;
-    height: 80%;
     overflow: auto;
-    /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    pointer-events: none;
 }
 
-/* Modal Content (Image) */
-.modal-content {
-    margin: auto;
-    display: block;
+.modalContent {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalImg {
     width: 80%;
     max-width: 700px;
 }
 
-/* Caption of Modal Image (Image Text) - Same Width as the Image */
-#caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-    height: 150px;
+.modalTxt {
+    margin-top: 1em;
 }
 
-/* Add Animation - Zoom in the Modal */
-.modal-content,
-#caption {
-    animation-name: zoom;
-    animation-duration: 0.3s;
+.close {
+    position: absolute;
+    top: 1em;
+    right: 1.5em;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.modal.appear {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal.appear .modalImg,
+.modal.appear .modalTxt {
+    animation: zoom 0.3s linear;
 }
 
 @keyframes zoom {
     from {
-        transform: scale(0)
+        transform: scale(0);
     }
 
     to {
-        transform: scale(1)
+        transform: scale(1);
     }
 }
 
-/* The Close Button */
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 2.5rem;
-    transition: 0.3s;
-}
 
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px) {
-    .modal-content {
-        width: 100%;
-    }
-}
-/* pop up style end */
-
-
-
-
-
-
+/* modal style end */
 
 
 
