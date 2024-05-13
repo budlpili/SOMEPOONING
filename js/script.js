@@ -13,6 +13,7 @@ sideLinks.forEach(item => {
 const menuBar = document.querySelector('.content nav .bx.bx-menu');
 const sideBar = document.querySelector('.sidebar');
 
+
 menuBar.addEventListener('click', () => {
     sideBar.classList.toggle('close');
     
@@ -46,15 +47,7 @@ window.addEventListener('resize', () => {
     }
 });
 
-// 페이지 이동 후에도 유지되도록 사이드바 상태 설정
-window.addEventListener('beforeunload', () => {
-    const sidebarState = sideBar.classList.contains('close') ? 'close' : 'open';
-    setCookie('sidebarState', sidebarState, 30); // 쿠키는 30일 동안 유지
-});
 
-
-
-// light dark mode 
 
 const toggler = document.getElementById('theme-toggle');
 
@@ -65,10 +58,3 @@ toggler.addEventListener('change', function () {
         document.body.classList.remove('dark');
     }
 });
-
-
-
-
-
-
-

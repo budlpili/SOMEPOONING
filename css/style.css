@@ -3302,8 +3302,6 @@ input[type="color"]::-moz-color-swatch {
     flex-direction: row;
     grid-gap: 24px;
     width: 100%;
-
-
     color: var(--dark);
 }
 .content .main .user-profile-management .profile-list-left{
@@ -3318,11 +3316,12 @@ input[type="color"]::-moz-color-swatch {
 }
 .content .main .user-profile-management .profile-list-right{
     flex-grow: 4;
-    flex-basis: 0px;
+    flex-basis: 500px;
     box-shadow: 2px 2px 4px rgb(0,0,0,0.1);
     height: 84vh;
     margin-bottom: 2px;
     overflow-y: scroll;
+    overflow-x:hidden;
 }
 
 
@@ -3579,6 +3578,7 @@ input[type="color"]::-moz-color-swatch {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     gap:16px;
     margin-bottom: 60px;
 }
@@ -3643,15 +3643,20 @@ button.btn-plus{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width:100%;
+    background-color: var(--grey);
 }
 .att-file .images{
-    display: flex;
-    flex-direction: column;
-    width: calc(100%/6);
+    /* display: flex;
+    flex-direction: column;*/
+
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr) ;
+    align-self: self-start;
     border-radius: 3px;
+    width: calc(100%/6);
+    
     padding: 0px 4px;
-    background-color: var(--grey);
 }
 .att-file .images .att-title{
     text-align: center;
@@ -3663,11 +3668,11 @@ button.btn-plus{
 .att-file .images img{
     width: 100%;
 }
-.images {
+/* .images {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 8px;
-}
+} */
 
 .images img {
     width: 100%;
@@ -3957,7 +3962,53 @@ button.btn-plus{
 /*-----------------------------------*\
     # Responsive
 \*-----------------------------------*/
+@media screen and (max-width: 1200px) {
+    
 
+    /* user-profile  */
+    .content .main .user-profile-management{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        grid-gap: 24px;
+        width: 100%;
+        color: var(--dark);
+    }
+
+    .profile-list-left .content-wrap{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap:48px;
+        width: 100%;
+    
+    }
+    .profile-list-left .content-wrap .title-wrap {
+        margin: 16px 0px 12px 0px;
+        border-bottom: 1px solid var(--grey) ;
+    }
+    .profile-list-left .title-wrap .email{
+        padding-bottom: 16px;
+
+    }
+
+    .profile-btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap:16px;
+        margin-bottom: 60px;
+    }
+    .user-profile-management button{
+        font-size: .85rem;
+        color: var(--light);
+        border-radius: 36px;
+        box-shadow: 2px 2px 6px rgb(0, 0, 0, .2);
+    }
+
+}
 
 @media screen and (max-width: 768px) {
     .sidebar{
