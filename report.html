@@ -76,8 +76,8 @@
                 </div>
             </div> -->
 
-            <div class="user-management">
-                <div class="user-list">
+            <div class="report-management">
+                <div class="report-list">
 
                     <div class="header">
                         <i class='bx bx-no-entry'></i>
@@ -87,135 +87,60 @@
                             <input type="text" class="input-search" placeholder="검색어를 입력해주세요">
                             <button class="btn-search"><i class="bx bx-search"></i></button>
                         </div>
-                        <i class='bx bx-filter'></i>
                     </div>
 
                     <table>
                         <thead>
                             <tr>
                                 <th><input type="checkbox" class="all-check"></th>
-                                <th class="data data-name"><a href="#" data-sort="name">이름</a></th>
-                                <th class="data data-email"><a href="#" data-sort="email">이메일</a></th>
-                                <th class="data data-phone"><a href="#" data-sort="phone">핸드폰</a></th>
-                                <th class="data data-userid"><a href="#" data-sort="userid">유저 ID</a></th>
-                                <th class="data data-datetime"><a href="#" data-sort="datetime">가입일시</a></th>
-                                <th class="data data-status"><a href="#" data-sort="status">승인여부</a></th>
+                                <th class="data data-num">신고번호</th>
+                                <th class="data data-report-user">신고자</th>
+                                <th class="data data-con">신고내용</th>
+                                <th class="data data-datetime">신고일시</th>
+                                <th class="data data-status">처리여부</th>
+                                <th class="data data-status">비고</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><input type="checkbox" class="one-check"></td>
+                                <td>123</td>
                                 <td class="profile-name">
-                                    <img src="./imges/avatar/Avatar=10.png">
-                                    <p>누구에요</p>
+                                    
+                                    <a href="./user-profile.html">
+                                        <img src="./imges/avatar/Avatar=10.png">
+                                        <p>누구에요</p>
+                                    </a>
                                 </td>
-                                <td>11111111@gmail.com</td>
-                                <td>010-8888-8888</td>
-                                <td>asdfsdfefawfefa9fasdfasdfasdf</td>
+                                <td>
+                                    <div class="report-item">
+                                        <div class="report-pro">
+                                            [<a href="./user-profile.html" style="display: flex; align-items: center;">
+                                                <img src="./imges/avatar/Avatar=3.png">
+                                                <p>음란마귀</p>
+                                            </a>]
+                                        </div>
+                                        <span>에 대한 음란신고 접수되었습니다.</span>
+                                    </div>
+
+                                </td>
                                 <td>2024/04/01, 16:44:62</td>
-                                <td><span class="status completed">승인완료</span></td>
+                                <td>
+                                
+                                    <div class="wrapper-send">
+                                        <input type="text" placeholder="신고자에게 보낼 메세지를 입력해주세요" class="report-send">
+                                        <i class='bx bx-send'></i>
+                                    </div>
+                                    
+                                </td>
+                                <td>처리중</td>
                                 
                             </tr>
-                            <tr>
-                                <td><input type="checkbox" class="one-check"></td>
-                                <td class="profile-name">
-                                    <img src="./imges/avatar/Avatar=1.png">
-                                    <p>나에요</p>
-                                </td>
-                                <td>11111111@gmail.com</td>
-                                <td>010-8888-8888</td>
-                                <td>asdfsdfefawfefa9fasdfasdfasdf</td>
-                                <td>2024/04/01, 16:44:62</td>
-                                <td><span class="status pending">보류중</span></td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="one-check"></td>
-                                <td class="profile-name">
-                                    <img src="./imges/avatar/Avatar=9.png">
-                                    <p>너군요</p>
-                                </td>
-                                <td>11111111@gmail.com</td>
-                                <td>010-8888-8888</td>
-                                <td>asdfsdfefawfefa9fasdfasdfasdf</td>
-                                <td>2024/04/01, 16:44:62</td>
-                                <td><span class="status process">대기중</span></td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="one-check"></td>
-                                <td class="profile-name">
-                                    <img src="./imges/avatar/Avatar=6.png">
-                                    <p>너군요</p>
-                                </td>
-                                <td>11111111@gmail.com</td>
-                                <td>010-8888-8888</td>
-                                <td>asdfsdfefawfefa9fasdfasdfasdf</td>
-                                <td>2024/04/01, 16:44:62</td>
-                                <td><span class="status process">대기중</span></td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="one-check"></td>
-                                <td class="profile-name">
-                                    <img src="./imges/avatar/Avatar=8.png">
-                                    <p>너군요</p>
-                                </td>
-                                <td>11111111@gmail.com</td>
-                                <td>010-8888-8888</td>
-                                <td>asdfsdfefawfefa9fasdfasdfasdf</td>
-                                <td>2024/04/01, 16:44:62</td>
-                                <td><span class="status process">대기중</span></td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="one-check"></td>
-                                <td class="profile-name">
-                                    <img src="./imges/avatar/Avatar=8.png">
-                                    <p>너군요</p>
-                                </td>
-                                <td>11111111@gmail.com</td>
-                                <td>010-8888-8888</td>
-                                <td>asdfsdfefawfefa9fasdfasdfasdf</td>
-                                <td>2024/04/01, 16:44:62</td>
-                                <td><span class="status process">대기중</span></td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="one-check"></td>
-                                <td class="profile-name">
-                                    <img src="./imges/avatar/Avatar=8.png">
-                                    <p>너군요</p>
-                                </td>
-                                <td>11111111@gmail.com</td>
-                                <td>010-8888-8888</td>
-                                <td>asdfsdfefawfefa9fasdfasdfasdf</td>
-                                <td>2024/04/01, 16:44:62</td>
-                                <td><span class="status process">대기중</span></td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="one-check"></td>
-                                <td class="profile-name">
-                                    <img src="./imges/avatar/Avatar=8.png">
-                                    <p>너군요</p>
-                                </td>
-                                <td>11111111@gmail.com</td>
-                                <td>010-8888-8888</td>
-                                <td>asdfsdfefawfefa9fasdfasdfasdf</td>
-                                <td>2024/04/01, 16:44:62</td>
-                                <td><span class="status process">대기중</span></td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="one-check"></td>
-                                <td class="profile-name">
-                                    <img src="./imges/avatar/Avatar=8.png">
-                                    <p>너군요</p>
-                                </td>
-                                <td>11111111@gmail.com</td>
-                                <td>010-8888-8888</td>
-                                <td>asdfsdfefawfefa9fasdfasdfasdf</td>
-                                <td>2024/04/01, 16:44:62</td>
-                                <td><span class="status process">대기중</span></td>
-                            </tr>
+                            
                         </tbody>
                     </table>
                     <!-- pagination -->
-                    <div class="bl-page">
+                    <div class="chat-page">
                         <div class="showing-count">
                             <span>Showing:</span>
                             <span>1 - 8</span>
@@ -264,6 +189,7 @@
     </div>
 
     <script src="js/script.js"></script>
+    <script src="js/select-list.js"></script>
 </body>
 
 </html>
