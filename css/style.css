@@ -611,7 +611,6 @@ td{
     display: flex;
     flex-wrap: wrap;
     grid-gap: 24px;
-    /* margin-top: 24px; */
     width: 100%;
     color: var(--dark);
     
@@ -687,11 +686,17 @@ td{
     flex-grow: 1;
     flex-basis: 500px;
     box-shadow: 2px 2px 4px rgb(0,0,0,0.1);
+    
 }
 
 .content main .user-management .user-list table{
     width: 100%;
     border-collapse: collapse;
+    
+}
+.user-list th,td{
+    white-space: nowrap;
+    
 }
 .content main .user-management .user-list table th{
     position: relative;
@@ -701,6 +706,14 @@ td{
     border-top: 1px solid var(--grey);
     border-bottom: 1px solid var(--grey);
 }
+
+.content main .user-management .user-list table td{
+    padding: 16px;
+}
+
+
+
+
 [data-sort]{
     color:var(--dark);
 }
@@ -738,10 +751,6 @@ td{
     vertical-align: 0.6375em;
     width: 9px;
     z-index: 10000;
-}
-
-.content main .user-management .user-list table td{
-    padding: 16px 0;
 }
 
 .content main .user-management .user-list table tr td.profile-name a{
@@ -880,6 +889,9 @@ td{
     color: var(--dark);
 }
 
+
+
+
 .content main .chat-management>div{
     border-radius: 20px;
     background: var(--light);
@@ -946,14 +958,22 @@ td{
 /* chatting table style start */
 
 .content main .chat-management .chat-list{
-    flex-grow: 1;
+    flex-grow: 2;
     flex-basis: 700px;
+    box-shadow: 2px 2px 4px rgb(0,0,0,0.1);
+}
+.chatting-room-wrap{
+    flex-grow: 1;
+    flex-basis: 400px;
     box-shadow: 2px 2px 4px rgb(0,0,0,0.1);
 }
 
 .content main .chat-management .chat-list table{
     width: 100%;
     border-collapse: collapse;
+}
+.content main .chat-management .chat-list table th,td{
+    white-space: nowrap;
 }
 .content main .chat-management .chat-list table th{
     position: relative;
@@ -965,7 +985,7 @@ td{
 }
 
 .content main .chat-management .chat-list table td{
-    padding: 16px 8px;
+    padding: 16px;
     text-align: center;
 }
 .content main .chat-management .chat-list table td.table-num{
@@ -1115,11 +1135,7 @@ td{
 }
 
 /* chatting roon style start */
-.chatting-room-wrap{
-    flex-grow: 1;
-    flex-basis: 400px;
-    box-shadow: 2px 2px 4px rgb(0,0,0,0.1);
-}
+
 
 .chat-room .chat-top {
     padding: 16px;
@@ -1850,7 +1866,7 @@ td{
 .content main .short_gram-management .audio_gram-list .audio-content{
     background-color: var(--grey);
     width:32%;
-    min-width: 240px;
+    min-width: 350px;
     min-height: 180px;
     border-radius: 12px;
     border: 1px solid var(--grey);
@@ -1873,13 +1889,15 @@ td{
 }
 .audio_gram-list .audio-content .audio-item{
     width:100%;
-    min-height: 100px;
+    min-width: 300px;
+
     background-color: #fff;
 }
 .audio_gram-list .audio-content .audio-item .audio-wrap{
     text-align: center;
     padding: 16px 8px;
 }
+
 .audio_gram-list .audio-content .audio-item .text{
     margin: 8px 0px;
     height: 36px;
@@ -2203,10 +2221,31 @@ td{
     padding: 24px;
     overflow-x: auto;
 }
+.title-wrap{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+.search-send-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
+}
+.search-send-wrap .search-box{
+    width: 80%;
+}
+.search-send-wrap .search-box .input-search{
+    width: 100%;
+}
+
 
 .content main .push-management .push-list .header{
     display: flex;
     align-items: center;
+    flex-direction: column;
     grid-gap: 16px;
     background-color: #fff;
     padding-bottom: 24px;
@@ -2259,13 +2298,11 @@ td{
     outline: 0;
 }
 .push-list .table-wrap{
-    height : 650px;
-    /* width : 300px; */
+    height : 580px;
     overflow : auto;
 }
 .push-send-list .table-wrap{
     height : 590px;
-    /* width : 300px; */
     overflow : auto;
 }
 .push-list table.push-user-list{
@@ -2319,14 +2356,14 @@ td{
     background: var(--grey);
 }
 
-.push-list .send-btn-plus{
+.send-btn-plus{
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: .85rem;
-    padding: 8px;
+    padding: 8px 16px;
     color: var(--dark-grey);
-    border-radius: 20px;
+    border-radius: 10px;
     font-weight: 400;
     text-align: center;
     background-color: var(--grey);
@@ -2335,18 +2372,15 @@ td{
     cursor: pointer;
     transition: 0.3s;
 }
-.push-list .send-btn-plus:hover{
+.send-btn-plus:hover{
     color: var(--primary);
     font-weight: 700;
     background-color: #ffffff;
     /* border: 1px solid var(--primary); */
 }
-
-.push-list .input-search{
-    width: 200px;
+.send-btn-plus span{
+    width:100px;
 }
-
-
 
  /* push send list table */
 
@@ -2384,12 +2418,16 @@ td{
     border-top: 1px solid var(--grey);
     border-bottom: 1px solid var(--grey);
 }
-
+.user-push-table th, td{
+    white-space: nowrap;
+}
 .user-push-table th.all-check {
     width: 5%;
+    min-width:16px;
 }
 .user-push-table th.data-name {
     width: 25%;
+    min-width: 160px;
 }
 .user-push-table th.data-userid {
     width: 18%;
@@ -2397,12 +2435,14 @@ td{
 
 .user-push-table th.data-con {
     width: 25%;
+    min-width: 180px;
 }
 .user-push-table th.data-daytime {
     width: 12%;
 }
 .user-push-table th.data-st {
     width: 15%;
+    min-width: 100px;
 }
 .user-push-table .user-id{
     display: flex;
@@ -2414,7 +2454,7 @@ td{
 }
 
 .content main .push-management .push-send-list table td{
-    padding: 8px;
+    padding: 16px;
     text-align: center;
     text-wrap: wrap;
 }
@@ -2485,7 +2525,6 @@ td{
     display: flex;
     flex-wrap: wrap;
     grid-gap: 24px;
-    /* margin-top: 24px; */
     width: 100%;
     color: var(--dark);
     
@@ -2495,7 +2534,6 @@ td{
     border-radius: 20px;
     background: var(--light);
     padding: 24px;
-    overflow-x: auto;
 }
 
 .content main .announcement-management .announcement-list .header{
@@ -2562,6 +2600,13 @@ td{
     flex-basis: 500px;
     box-shadow: 2px 2px 4px rgb(0,0,0,0.1);
 }
+.content main .announcement-management .announcement-list .wrap1{
+    overflow-x: auto;
+    border: 1px solid red;
+}
+.announcement-list table th, td{
+    white-space: nowrap;
+}
 
 .content main .announcement-management .announcement-list table{
     width: 100%;
@@ -2591,7 +2636,6 @@ td{
 .announcement-list table th.data-btn{
     width: 20%;
 }
-
 
 
 
@@ -2633,7 +2677,7 @@ td{
 }
 
 .content main .announcement-management .announcement-list table td{
-    padding: 16px 0;
+    padding: 16px;
 }
 .content main .announcement-management .announcement-list table td.event{
     font-weight: 700;
@@ -2802,6 +2846,8 @@ td{
     text-align: center;
     padding:12px;
     border-radius: 36px;
+    border:none;
+    outline: none;
     box-shadow: 2px 2px 4px rgb(0, 0, 0, .2);
 }
 
@@ -2990,10 +3036,12 @@ input[type="color"]::-moz-color-swatch {
     text-align: center;
     border-top: 1px solid var(--grey);
     border-bottom: 1px solid var(--grey);
+    white-space: nowrap;
 }
 
 .content main .report-management .report-list table td{
     padding: 16px 8px;
+    white-space: nowrap;
 }
 
 .content main .report-management .report-list table tr td.profile-name a{
@@ -3045,6 +3093,7 @@ input[type="color"]::-moz-color-swatch {
 .content main .report-management .report-list table td:nth-child(6){
     text-align: right;
     width:27%;
+    min-width: 300px;
 }
 .content main .report-management .report-list table td:nth-child(7){
     text-align: center;
@@ -3272,15 +3321,19 @@ input[type="color"]::-moz-color-swatch {
     border-radius: 3px;
 }
 
+.editor-btn-wrap{
+    width: 100%;
+    padding:0px 36px 36px 36px;
 
+}
 .editor-btn{
-    width: 160px;
+    width: 100%;
     background-color: var(--primary);
     color:#fff;
-    font-size: .75rem;
+    font-size: .85rem;
     font-weight: 400;
     text-align: center;
-    padding:12px;
+    padding:16px;
     border-radius: 36px;
     box-shadow: 2px 2px 4px rgb(0, 0, 0, .2);
 }
